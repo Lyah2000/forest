@@ -5,7 +5,7 @@
 # LICENSE file in the root directory of this source tree.
 #
 
-from binary_tree_generator import preorder
+from binary_tree_generator import levelorder, preorder
 
 class Node:
     def __init__(self, data, left=None, right=None):
@@ -24,6 +24,10 @@ if __name__ == '__main__':
                      Node(6), 
                      Node(7)))
     g = preorder(tree)
-    #print(next(g).data, next(g).data)
+    
     for X in map(lambda node: node.data, preorder(tree)):
-        print(X)
+        print(X) 
+
+    for i in levelorder(tree):
+        print(i.data)
+    
